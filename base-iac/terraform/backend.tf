@@ -18,7 +18,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name = "rg-nile"
+  name     = "rg-nile"
   location = "centralindia"
 }
 
@@ -26,8 +26,11 @@ module "azure_monitoring_module" {
 
   source = "./modules/monitoring"
 
-  name        = "test-workspace"
-  rg_name     = azurerm_resource_group.rg.name
-  rg_location = azurerm_resource_group.rg.location
-
+  name                = "test-workspace"
+  rg_name             = azurerm_resource_group.rg.name
+  rg_location         = azurerm_resource_group.rg.location
+  rg_id               = azurerm_resource_group.rg.id
+  vm_ids              = []
+  sql_database_ids    = []
+  storage_account_ids = []
 }

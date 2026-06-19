@@ -41,3 +41,23 @@ variable "commitment_tier_gb_per_day" {
   description = "Commitment Tier GB Per Day"
   default = 100
 }
+
+variable "vm_ids" {
+  type = list(string)
+  description = "Pass the id's of the VM's for CPU usage about 85% for 5 Minutes"
+}
+
+variable "storage_account_ids" {
+  type = list(string)
+  description = "Pass the id's of storage account to monitor for Storage above 80% Capacity"
+}
+
+variable "sql_database_ids" {
+  type = list(string)
+  description = "Pass the id's of SQL Server to monitor DTU Greater than 80% for 10 minutes"
+}
+
+variable "rg_id" {
+  type = string
+  description = "Provide the resource group Id for the Policy Assignment"
+}
