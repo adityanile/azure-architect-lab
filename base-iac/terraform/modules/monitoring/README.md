@@ -17,12 +17,18 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
+| [azurerm_application_insights_workbook.test_workbook](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/application_insights_workbook) | resource |
 | [azurerm_log_analytics_workspace.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace) | resource |
 | [azurerm_monitor_action_group.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_action_group) | resource |
 | [azurerm_monitor_diagnostic_setting.deploy_diag_setting](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_diagnostic_setting) | resource |
 | [azurerm_monitor_metric_alert.cpu_metric_alert](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_metric_alert) | resource |
 | [azurerm_monitor_metric_alert.sql_dtu_alert](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_metric_alert) | resource |
 | [azurerm_monitor_metric_alert.storage_metric_alert](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_metric_alert) | resource |
+| [azurerm_role_assignment.diag_policy_monitoring_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
+| [azurerm_security_center_subscription_pricing.container](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
+| [azurerm_security_center_subscription_pricing.sql](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
+| [azurerm_security_center_subscription_pricing.storage](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
+| [azurerm_security_center_subscription_pricing.vm](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/security_center_subscription_pricing) | resource |
 | [azurerm_subscription_policy_assignment.rg_deploy_diag_policy](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subscription_policy_assignment) | resource |
 | [azurerm_policy_set_definition.diag_alllogs_la](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/policy_set_definition) | data source |
 | [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription) | data source |
@@ -44,6 +50,7 @@ No modules.
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to monitoring resources | `map(string)` | `{}` | no |
 | <a name="input_vm_ids"></a> [vm\_ids](#input\_vm\_ids) | Pass the id's of the VM's for CPU usage about 85% for 5 Minutes | `list(string)` | n/a | yes |
 | <a name="input_webhook_service_uri"></a> [webhook\_service\_uri](#input\_webhook\_service\_uri) | Webhook URL for monitor action group notifications | `string` | n/a | yes |
+| <a name="input_workbook_id"></a> [workbook\_id](#input\_workbook\_id) | GUID for workbook resource name (must be unique per environment) | `string` | n/a | yes |
 
 ## Outputs
 
