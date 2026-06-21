@@ -25,39 +25,56 @@ variable "rg_location" {
 }
 
 variable "retention_in_days_dev" {
-  type = number
+  type        = number
   description = "Days for Retention Dev"
-  default = 30
+  default     = 30
 }
 
 variable "retention_in_days_prod" {
-  type = number
+  type        = number
   description = "Days for Retention Prod"
-  default = 90
+  default     = 90
 }
 
 variable "commitment_tier_gb_per_day" {
-  type = number
+  type        = number
   description = "Commitment Tier GB Per Day"
-  default = 100
+  default     = 100
 }
 
 variable "vm_ids" {
-  type = list(string)
+  type        = list(string)
   description = "Pass the id's of the VM's for CPU usage about 85% for 5 Minutes"
 }
 
 variable "storage_account_ids" {
-  type = list(string)
+  type        = list(string)
   description = "Pass the id's of storage account to monitor for Storage above 80% Capacity"
 }
 
 variable "sql_database_ids" {
-  type = list(string)
+  type        = list(string)
   description = "Pass the id's of SQL Server to monitor DTU Greater than 80% for 10 minutes"
 }
 
-variable "rg_id" {
-  type = string
-  description = "Provide the resource group Id for the Policy Assignment"
+variable "email_receiver_address" {
+  type        = string
+  description = "Email address for monitor action group notifications"
 }
+
+variable "webhook_service_uri" {
+  type        = string
+  description = "Webhook URL for monitor action group notifications"
+}
+
+variable "tags" {
+  type        = map(string)
+  description = "Tags to apply to monitoring resources"
+  default     = {}
+}
+
+variable "workbook_id" {
+  type        = string
+  description = "GUID for workbook resource name (must be unique per environment)" 
+}
+
